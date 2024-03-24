@@ -11,6 +11,8 @@
 </head>
 <body>
     <x-page-items.header/>
-
+    <main>
+        <x-page-items.home-page.menu/>
+    </main>
 </body>
 </html>
