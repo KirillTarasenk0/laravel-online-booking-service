@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travelto</title>
     <link rel="icon" href={{ asset('images/icons/logos/logo.svg') }} type="image/x-icon">
+    <link rel="stylesheet" href={{ asset('css/style.css') }}>
     @vite('resources/css/app.css')
 </head>
 <body>
     <x-page-items.header/>
     <main>
         <x-page-items.home-page.menu/>
+        <x-page-items.home-page.book-hotel/>
     </main>
 </body>
 </html>
