@@ -6,6 +6,7 @@
         </div>
         <div>
             <form action="#">
+                @csrf
                 <div class="flex justify-center content-center">
                     <div>
                         <div><label for="hotel__name">Название отеля</label></div>
