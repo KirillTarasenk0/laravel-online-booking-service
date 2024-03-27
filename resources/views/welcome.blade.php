@@ -15,6 +15,11 @@
     <main>
         <x-page-items.home-page.menu/>
         <x-page-items.home-page.book-hotel/>
+        <section>
+            <div class="flex justify-center content-center flex-wrap pt-10">
+                <x-page-items.home-page.hotels-list/>
+            </div>
+        </section>
     </main>
 </body>
 </html>
