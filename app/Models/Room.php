@@ -17,7 +17,6 @@ class Room extends Model
         'description',
         'capacity',
         'price',
-        'hotel_id',
     ];
     public function hotel(): BelongsTo
     {
