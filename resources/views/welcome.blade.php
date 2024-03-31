@@ -23,6 +23,7 @@
                 {{ $hotels->links() }}
             </div>
         </section>
+        <x-page-items.home-page.news-send-mailer/>
     </main>
 </body>
 </html>
