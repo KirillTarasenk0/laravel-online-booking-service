@@ -17,7 +17,7 @@
         <x-page-items.home-page.book-hotel/>
         <section>
             <div class="flex justify-center content-center flex-wrap pt-10">
-                <x-page-items.home-page.hotels-list/>
+                <x-page-items.home-page.hotels-list :hotels="$hotels"/>
             </div>
         </section>
     </main>
