@@ -19,6 +19,9 @@
             <div class="flex justify-center content-center flex-wrap pt-10">
                 <x-page-items.home-page.hotels-list :hotels="$hotels"/>
             </div>
+            <div class="flex justify-center content-center flex-wrap pt-10">
+                {{ $hotels->links() }}
+            </div>
         </section>
     </main>
 </body>
