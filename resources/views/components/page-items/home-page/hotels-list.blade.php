@@ -6,7 +6,9 @@
         <h5 class="font-bold">{{ $hotel->name }}</h5>
         <p class="text-gray-500 w-24">{{ $hotel->address }}</p>
         <div class="flex bg-blue-100 p-2 ">
-            <h6 class="font-bold text-blue-600">8 990 ₽</h6>
+            @foreach($hotel->rooms as $room)
+                <h6 class="font-bold text-blue-600">{{ $room->price }}₽</h6>
+            @endforeach
             <p class="pl-1 text-gray-500">/ за ночь</p>
         </div>
     </div>
