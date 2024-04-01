@@ -3,12 +3,20 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Views\MainPageController;
+use App\Http\Controllers\Mails\NewsSenderController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', [MainPageController::class, 'index']);
+Route::controller(MainPageController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::post('/', 'toStoreEmail')->name('to-store-email');
+});
+
+Route::controller(NewsSenderController::class)->group(function () {
+    Route::post('/createNewsEmail', 'create')->name('create-news-email');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

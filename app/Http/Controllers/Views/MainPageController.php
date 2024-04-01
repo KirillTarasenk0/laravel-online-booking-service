@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Views;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Services\HotelService;
 
@@ -16,5 +17,9 @@ class MainPageController extends Controller
         return view('welcome', [
             'hotels' => $this->hotelService->getHotelData()
         ]);
+    }
+    public function toStoreEmail(): RedirectResponse
+    {
+        return redirect()->route('create-news-email');
     }
 }
