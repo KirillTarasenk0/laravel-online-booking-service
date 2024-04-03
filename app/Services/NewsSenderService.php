@@ -8,8 +8,10 @@ class NewsSenderService
 {
     public function saveNewsSenderEmail(string $userEmail): void
     {
-        NewsSender::create([
-            'email' => $userEmail
-        ]);
+        if (!NewsSender::where('email', $userEmail)->exists()) {
+            NewsSender::create([
+                'email' => $userEmail
+            ]);
+        }
     }
 }
