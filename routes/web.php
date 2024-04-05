@@ -16,6 +16,7 @@ Route::controller(MainPageController::class)->group(function () {
 
 Route::controller(NewsSenderController::class)->group(function () {
     Route::post('/createNewsEmail', 'create')->name('create-news-email');
+    Route::get('/newsEmailSender', 'sendNewsEmails')->name('send-news-emails');
 });
 
 Route::middleware('auth')->group(function () {
