@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Views\MainPageController;
 use App\Http\Controllers\Mails\NewsSenderController;
+use App\Http\Controllers\Rooms\RoomSearchController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,6 +18,10 @@ Route::controller(MainPageController::class)->group(function () {
 Route::controller(NewsSenderController::class)->group(function () {
     Route::post('/createNewsEmail', 'create')->name('create-news-email');
     Route::get('/newsEmailSender', 'sendNewsEmails')->name('send-news-emails');
+});
+
+Route::controller(RoomSearchController::class)->group(function () {
+    Route::get('/findRoom', 'findRoom')->name('find-room');
 });
 
 Route::middleware('auth')->group(function () {
