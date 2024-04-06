@@ -36,7 +36,20 @@
                 <img src="{{ asset('images/icons/profile.svg') }}" alt="User profile">
             </div>
             <div class="mt-1 ml-2">
-                <a class="font-bold" href="#">Личный кабинет</a>
+                @guest
+                    <form action="{{ route('register') }}" method="GET">
+                        @csrf
+                        <button class="font-bold">Личный кабинет</button>
+                    </form>
+                @endguest
+                @php
+                    use Illuminate\Support\Facades\Auth;
+                @endphp
+                @auth
+                        <form action="{{ route('verification.notice')  }}" method="GET">
+                            <button>{{ Auth::user()->name}}</button>
+                        </form>
+                @endauth
             </div>
         </div>
     </div>

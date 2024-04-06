@@ -28,7 +28,6 @@ class NewsSenderJob implements ShouldQueue
      */
     public function handle(NewsSenderService $newsSenderService): void
     {
-        //Mail::to('ktarasenkotarasenko@yandex.ru')->send(new NewsSenderMail());
         foreach ($newsSenderService->getNewsSenderEmails() as $emails) {
             Mail::to($emails)->send(new NewsSenderMail());
         }
