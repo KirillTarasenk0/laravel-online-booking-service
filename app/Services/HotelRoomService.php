@@ -25,12 +25,18 @@ class HotelRoomService
         })->get();
         foreach ($hotels as $hotel) {
             $this->hotelName = $hotel->name;
+            session(['hotelName' => $this->hotelName]);
             $this->hotelDescription = $hotel->description;
+            session(['hotelDescription' => $this->hotelDescription]);
             $this->hotelAddress = $hotel->address;
+            session(['hotelAddress' => $this->hotelAddress]);
             foreach ($hotel->rooms as $room) {
                 $this->roomDescription = $room->description;
+                session(['roomDescription' => $this->roomDescription]);
                 $this->roomCapacity = $room->capacity;
+                session(['roomCapacity' => $this->roomCapacity]);
                 $this->roomPrice = $room->price;
+                session(['roomPrice' => $this->roomPrice]);
             }
         }
     }

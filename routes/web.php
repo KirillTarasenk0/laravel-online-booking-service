@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Views\MainPageController;
 use App\Http\Controllers\Mails\NewsSenderController;
 use App\Http\Controllers\Rooms\RoomSearchController;
+use App\Http\Controllers\Rooms\RoomDescriptionController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,9 +21,9 @@ Route::controller(NewsSenderController::class)->group(function () {
     Route::get('/newsEmailSender', 'sendNewsEmails')->name('send-news-emails');
 });
 
-Route::controller(RoomSearchController::class)->group(function () {
-    Route::get('/findRoom', 'findRoom')->name('find-room');
-});
+Route::get('/findRoom', [RoomSearchController::class, 'findRoom'])->name('find-room');
+
+Route::get('/hotelRoomDescription', [RoomDescriptionController::class, 'index'])->name('hotel-room-description');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

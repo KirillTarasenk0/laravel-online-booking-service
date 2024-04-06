@@ -11,12 +11,18 @@
     <div class="flex content-center pt-2">
         <div>
             <form action="">
-                <button>Забронировать</button>
+                @csrf
+                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold pt-2 pb-2 pl-3 pr-3">
+                    Забронировать
+                </button>
             </form>
         </div>
         <div class="pl-3">
-            <form action="">
-                <button>Описание</button>
+            <form action="{{ route('hotel-room-description') }}" method="GET">
+                @csrf
+                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold pt-2 pb-2 pl-3 pr-3">
+                    Описание
+                </button>
             </form>
         </div>
     </div>
