@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\DateRule;
-use Illuminate\Support\Facades\Date;
 
 class RoomSearchRequest extends FormRequest
 {
