@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingRoomService
 {
-    public function bookRoom()
+    public function bookRoom(): void
     {
         Booking::insert([
            'user_id' => Auth::id(),

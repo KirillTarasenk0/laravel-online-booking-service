@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\NewsSender;
 use App\Observers\NewsSenderObserver;
+use Illuminate\Support\Facades\Event;
+use App\Listeners\SendBookingEmail;
+use App\Events\BookingRoomEvent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,5 +25,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         NewsSender::observe(NewsSenderObserver::class);
+        Event::listen(
+            BookingRoomEvent::class,
+            SendBookingEmail::class,
+        );
     }
 }
