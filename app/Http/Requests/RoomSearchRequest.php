@@ -24,8 +24,8 @@ class RoomSearchRequest extends FormRequest
     {
         return [
             'hotelName' => ['required', 'string'],
-            'entryDate' => ['required', 'date', new DateRule],
-            'leaveDate' => ['required', 'date', new DateRule],
+            'startDate' => ['required', 'date', new DateRule],
+            'endDate' => ['required', 'date', new DateRule],
             'visitorsNumber' => ['required', 'numeric', 'min_digits:'],
         ];
     }

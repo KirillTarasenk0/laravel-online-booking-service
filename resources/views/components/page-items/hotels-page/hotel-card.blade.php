@@ -11,7 +11,7 @@
     <div class="flex content-center pt-2">
         @auth
             <div>
-                <form action="">
+                <form action="{{ route('bookRoom') }}" method="POST">
                     @csrf
                     <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold pt-2 pb-2 pl-3 pr-3">
                         Забронировать

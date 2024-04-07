@@ -14,11 +14,11 @@
                     </div>
                     <div>
                         <div><label for="entry__date">Дата заезда</label></div>
-                        <div><input name="entryDate" class="pr-20" id="entry__date" type="date"/></div>
+                        <div><input name="startDate" class="pr-20" id="entry__date" type="date"/></div>
                     </div>
                     <div>
                         <div><label for="leave__date">Дата отъезда</label></div>
-                        <div><input name="leaveDate" class="pr-20" id="leave__date" type="date"/></div>
+                        <div><input name="endDate" class="pr-20" id="leave__date" type="date"/></div>
                     </div>
                     <div>
                         <div><label for="visitors__number">Количество человек</label></div>
