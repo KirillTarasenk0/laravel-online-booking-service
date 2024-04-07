@@ -4,16 +4,17 @@ namespace App\Services;
 
 use App\Models\Hotel;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class HotelRoomService
 {
-    private string $hotelName;
-    private string $hotelDescription;
-    private string $hotelAddress;
-    private string $roomDescription;
-    private int $roomCapacity;
-    private float $roomPrice;
+    private string $hotelName = '';
+    private string $hotelDescription = '';
+    private string $hotelAddress = '';
+    private string $roomDescription = '';
+    private int $roomCapacity = 0;
+    private float $roomPrice = 0;
     public function getHotelData(): LengthAwarePaginator
     {
         return Hotel::paginate(15);

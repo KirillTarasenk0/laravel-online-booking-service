@@ -8,7 +8,7 @@ use App\Http\Controllers\Rooms\RoomSearchController;
 use App\Http\Controllers\Rooms\RoomDescriptionController;
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::controller(MainPageController::class)->group(function () {

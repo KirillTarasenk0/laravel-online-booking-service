@@ -9,14 +9,16 @@
         <p class="pl-1 text-gray-500 ">/ за ночь</p>
     </div>
     <div class="flex content-center pt-2">
-        <div>
-            <form action="">
-                @csrf
-                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold pt-2 pb-2 pl-3 pr-3">
-                    Забронировать
-                </button>
-            </form>
-        </div>
+        @auth
+            <div>
+                <form action="">
+                    @csrf
+                    <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold pt-2 pb-2 pl-3 pr-3">
+                        Забронировать
+                    </button>
+                </form>
+            </div>
+        @endauth
         <div class="pl-3">
             <form action="{{ route('hotel-room-description') }}" method="GET">
                 @csrf
